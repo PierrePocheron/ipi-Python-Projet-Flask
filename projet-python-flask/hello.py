@@ -1,23 +1,25 @@
-from flask import Flask
+from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!Heeeyy ! Bienvenu sur ce projet !     Le site web vient d être mit à jour !'
+    return render_template("view_connexion.html")
 
 
 @app.route('/connexion')
-def hello_world2():
-    return 'Bienvenue sur la page : Connexion !'
+def index():
+    return render_template("view_connexion.html")
+
 
 
 @app.route('/produit')
-def hello_world3():
-    return 'Bienvenue sur la page : Produit !'
+def hello_produit():
+    return render_template("view_Produit.html")
 
 
 @app.route('/panier')
-def hello_world4():
-    return 'Bienvenue sur la page : Panier !'
+def hello_panier():
+    return render_template("view_panier.html")
 
 
+app.run(debug=True)
