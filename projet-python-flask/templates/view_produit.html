@@ -5,11 +5,7 @@
 
 
 
-
-
-{% include "view_header.html" %}
-
-<!--
+<
 {% extends 'base.html' %}
 
 {% block header %}
@@ -18,7 +14,7 @@
     <a class="action" href="{{ url_for('blog.create') }}">New</a>
   {% endif %}
 {% endblock %}
--->
+
 
 
 {% block content %}
@@ -40,5 +36,3 @@
     {% endif %}
   {% endfor %}
 {% endblock %}
-
-{% include "view_footer.html" %}

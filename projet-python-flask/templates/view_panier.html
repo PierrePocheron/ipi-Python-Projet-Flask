@@ -1,6 +1,7 @@
-{% include "view_header.html" %}
+{% extends "base.html" %}
+{% block title %}Page Panier{% endblock%}
 
-	  <h1>Mon super site</h1>
-	  <p>Tout fonctionne parfaitement (Page panier)</p>
-
-{% include "view_footer.html" %}
+{% block content %}
+<h1>Mon super site</h1>
+<p>Tout fonctionne parfaitement (Page panier)</p>
+{% endblock%}
