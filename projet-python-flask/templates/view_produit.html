@@ -2,9 +2,16 @@
 {% block title %}Page Produit{% endblock%}
 
 
+{% block navbar %}
+<div class="d-flex justify-content-end mr-5">
+    <div><img src="/static/images/user-regular.svg" style="width: 25px; height: 25px;"> + nom utilisateur</div>
+    <div class="ml-3"><img src="/static/images/shopping-cart-solid.svg" style="width: 25px; height: 25px;"> + Nb Article Panier</div>
+</div>
+{% endblock%}
+
 
 {% block content %}
-<div id="test" class="container-fluid big-container" style="background-color:#f0f0f0; margin-top: 70px;">
+<div id="test" class="container-fluid big-container" style="background-color:#f0f0f0;">
     <div class="container-am" style="padding-top: 30px; padding-bottom: 56px;">
         <div class="row rowNoGutters" style="justify-content: center;">
             <div class="col-lg-12">

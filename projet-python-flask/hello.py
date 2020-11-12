@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from flask import request
 from db import get_db
 
 app = Flask(__name__)
@@ -29,5 +30,5 @@ def panier():
     return render_template("view_panier.html")
 
 
-if __name__ == "__main__":
-    app.run(debug=true)
+# if __name__ == "__main__":
+#     app.run(debug=true)
