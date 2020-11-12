@@ -2,27 +2,30 @@
 {% block title %}Page de Connexion{% endblock%}
 
 {% block content %}
-<link type="text/css" rel="stylesheet" href="static/css/connexion.css">
+<link type="text/css" rel="stylesheet" href="static/css/style_connexion.css">
 <div class="container">
-    <div class="row">
-        <div class="login-form">
-            <form action="/examples/actions/confirmation.php" method="post">
-                <h2 class="text-center">Log in</h2>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Username" required="required">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Password" required="required">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary btn-block">Log in</button>
-                </div>
-                <div class="clearfix">
-                    <label class="pull-left checkbox-inline"><input type="checkbox"> Remember me</label>
-                    <a href="#" class="pull-right">Forgot Password?</a>
-                </div>
-            </form>
-            <p class="text-center"><a href="#">Create an Account</a></p>
+    <div class="row" style="justify-content: center;">
+        <div class="col-lg-4">
+            <div class="login-form">
+<!--                <form action="/examples/actions/confirmation.php" method="post">-->
+                <form action="/produit" method="post">
+                    <h2 class="text-center">Connexion</h2>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nom d'utilisateur" required="required">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Mot de passe" required="required">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Connexion</button>
+                    </div>
+                    <div class="clearfix">
+                        <label class="pull-left checkbox-inline"><input type="checkbox"> Se souvenir de moi</label>
+                        <a href="#" class="pull-right">Mot de passe oublié ?</a>
+                    </div>
+                </form>
+                <p class="text-center"><a href="#">créer un compte</a></p>
+            </div>
         </div>
     </div>
 </div>

@@ -21,7 +21,7 @@ def hello_produit():
         ' FROM produit'
         ' ORDER BY name'
     ).fetchall()
-    return render_template("view_produit.html", produits=produits)
+    # return render_template("view_produit.html", produits=produits)
     return render_template("view_produit.html")
 
 
