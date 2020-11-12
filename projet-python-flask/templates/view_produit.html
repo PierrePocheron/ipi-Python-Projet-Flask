@@ -1,38 +1,62 @@
-<!-- Body -->
-<h1>Mon super site</h1>
-<p>Tout fonctionne parfaitement (Page produit)</p>
-
-
-
-
-<
-{% extends 'base.html' %}
-
-{% block header %}
-  <h1>{% block title %}Posts{% endblock %}</h1>
-  {% if g.user %}
-    <a class="action" href="{{ url_for('blog.create') }}">New</a>
-  {% endif %}
-{% endblock %}
+{% extends "base.html" %}
+{% block title %}Page Produit{% endblock%}
 
 
 
 {% block content %}
-  {% for post in posts %}
-    <article class="post">
-      <header>
-        <div>
-          <h1>{{ post['title'] }}</h1>
-          <div class="about">by {{ post['username'] }} on {{ post['created'].strftime('%Y-%m-%d') }}</div>
+
+<div id="test" class="container-fluid big-container" style="background-color:#f0f0f0; margin-top: 70px;">
+    <div class="container-am" style="padding-top: 30px; padding-bottom: 56px;">
+        <div class="row rowNoGutters" style="justify-content: center;">
+            <div class="col-lg-12">
+                <div class="text-center wow flipInX animated" style="visibility: visible; animation-name: flipInX;">
+                    <h6 class="text-danger title5 pt-5"><strong>EN FRANCE</strong></h6>
+                    <h2 class="titleSection">Sneakers disponibles</h2>
+                </div>
+            </div>
         </div>
-        {% if g.user['id'] == post['author_id'] %}
-          <a class="action" href="{{ url_for('blog.update', id=post['id']) }}">Edit</a>
-        {% endif %}
-      </header>
-      <p class="body">{{ post['body'] }}</p>
-    </article>
-    {% if not loop.last %}
-      <hr>
-    {% endif %}
-  {% endfor %}
-{% endblock %}
+        <div class="row rowNoGutters mt-5" style="text-align: -webkit-center;">
+            <div class="col-lg-3 col-md-4 col-sm-6 mt-3 mb-3 mb-xl-5 itemSquare wow zoomIn animated" style="visibility: visible; animation-name: zoomIn;">
+                <img src="/static/images/logo_shoe.png">
+                <div class="divbutton text-center m-4 p-5">
+                    <p><strong>Vaporwaffle Sacai Black White </strong></p>
+                    <p>Nike</p>
+                    <p style="color: #878786;">à partir de 500€</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mt-3 mb-3 mb-xl-5 itemSquare wow zoomIn animated" style="visibility: visible; animation-name: zoomIn;">
+                <img src="/static/images/logo_shoe.png">
+                <div class="divbutton text-center m-4 p-5">
+                    <p><strong>Vaporwaffle Sacai Black White </strong></p>
+                    <p>Nike</p>
+                    <p style="color: #878786;">à partir de 500€</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mt-3 mb-3 mb-xl-5 itemSquare wow zoomIn animated" style="visibility: visible; animation-name: zoomIn;">
+                <img src="/static/images/logo_shoe.png">
+                <div class="divbutton text-center m-4 p-5">
+                    <p><strong>Vaporwaffle Sacai Black White </strong></p>
+                    <p>Nike</p>
+                    <p style="color: #878786;">à partir de 500€</p>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mt-3 mb-3 mb-xl-5 itemSquare wow zoomIn animated" style="visibility: visible; animation-name: zoomIn;">
+                <img src="/static/images/logo_shoe.png">
+                <div class="divbutton text-center m-4 p-5">
+                    <p><strong>Vaporwaffle Sacai Black White </strong></p>
+                    <p>Nike</p>
+                    <p style="color: #878786;">à partir de 500€</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock%}
+
+
+

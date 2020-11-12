@@ -5,13 +5,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock%}</title>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-light bg-light">
-          <a class="navbar-brand" href="#" style="display: inline-flex;">
+          <a class="navbar-brand" href="/" style="display: inline-flex;">
             <img src="/static/images/logo_shoe.png" class="d-inline-block align-top ml-3 mr-5 " alt="Logo-sneakers">
             <h1 class="display-3 ml-3" style="font-family: system-ui;">Sneakers</h1>
           </a>
@@ -24,11 +26,26 @@
     {% endblock%}
 
 
+
    <footer>
         <div class="container text-center">
-            <p>Copyright © Sneakers 2018</p>
+            <p>Copyright © Pierre - Sami</p>
+            <p>Projet Python Flask</p>
+            <p>IPI - 2020</p>
         </div>
    </footer>
+
+    <div class="container">
+        <div class="row" style="justify-content: center;">
+            <div class="col-lg-4">
+                <div class="d-flex justify-content-between">
+                    <a href="/connexion"><button type="button" class="btn btn-primary">Connexion</button></a>
+                    <a href="/produit"><button type="button" class="btn btn-warning">Produit</button></a>
+                    <a href="/panier"><button type="button" class="btn btn-danger" href="/panier">Panier</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
