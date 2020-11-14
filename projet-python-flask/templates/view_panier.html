@@ -1,19 +1,97 @@
 {% extends "base.html" %}
 {% block title %}Page Panier{% endblock%}
 
+
 {% block navbar %}
 <div class="d-flex justify-content-end mr-5">
-    <div><img src="/static/images/user-regular.svg" style="width: 25px; height: 25px;"> + nom utilisateur</div>
-    <div class="ml-3"><img src="/static/images/shopping-cart-solid.svg" style="width: 25px; height: 25px;"> + Nb Article Panier</div>
+    <div><img src="/static/images/user-regular.svg" style="width: 25px; height: 25px;"> $username </div>
+    <a href="/panier"><div class="ml-3 text-danger"><img src="/static/images/shopping-cart-solid.svg" style="width: 25px; height: 25px;"> $X </div></a>
 </div>
 {% endblock%}
 
+
 {% block content %}
-<div class="container">
-    <div class="row" style="justify-content: center;">
-        <div class="col-lg-4">
-          <h1>Votre panier</h1>
+<div id="test" class="container-fluid big-container" style="background-color:#f0f0f0;">
+    <div class="container-am" style="padding-top: 30px; padding-bottom: 56px;">
+        <div class="row rowNoGutters" style="justify-content: center;">
+            <div class="col-lg-12">
+                <div class="text-center animate__animated animate__bounce" style="animation-name: flipInX;">
+                    <h6 class="text-danger title5 pt-5"><strong>$X Article(s)</strong></h6>
+                    <h2 class="titleSection">Votre panier</h2>
+                </div>
+            </div>
         </div>
+        <div class="row mt-5" style="justify-content: center;">
+            <div class="col-lg-7">
+                <div class="row d-flex align-items-center">
+                    <div class="col-3">
+                        <img src="/static/images/logo_shoe.png">
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-3">
+                                Nike
+                            </div>
+                            <div class="col-6">
+                                Vaporwaffle Sacai Black White
+                            </div>
+                            <div class="col-3">
+                                630€
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <a href="#"><button type="button" class="btn btn-outline-danger">Retirer du panier</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="col-12">
+
+        <div class="row mt-5" style="justify-content: center;">
+            <div class="col-lg-7">
+                <div class="row d-flex align-items-center">
+                    <div class="col-3">
+                        <img src="/static/images/logo_shoe.png">
+                    </div>
+                    <div class="col-6">
+                        <div class="row">
+                            <div class="col-3">
+                                Nike
+                            </div>
+                            <div class="col-6">
+                                Vaporwaffle Sacai Black White
+                            </div>
+                            <div class="col-3">
+                                630€
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <a href="#"><button type="button" class="btn btn-outline-danger">Retirer du panier</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5"></div>
+        <div class="row mt-5" style="justify-content: center;">
+            <div class="col-lg-4 ">
+                <div class="row d-flex align-items-center" style="font-weight: bold">
+                    <div class="col-3">
+                        $x articles
+                    </div>
+                    <div class="col-6">
+                        Total ttc : $prixTotal
+                    </div>
+                    <div class="col-3">
+                        <a href="#"><button type="button" class="btn btn-success">Valider commande</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 {% endblock%}
