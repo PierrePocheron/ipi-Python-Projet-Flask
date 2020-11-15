@@ -4,7 +4,6 @@
 
 Board du projet : https://miro.com/app/board/o9J_kibrMIk=/
 
-==============================
 
 ##Présentation de mon projet :
 
@@ -17,7 +16,7 @@ Il peut les ajouter au panier et passer une commande.
 
 ==============================
 
-Mise en place du projet :
+# Mise en place du projet :
 
 ### Etape 1 - Récupérer le projet Github avec Git
 
