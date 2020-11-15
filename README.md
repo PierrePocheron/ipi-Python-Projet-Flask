@@ -1,5 +1,3 @@
-==============================
-
 # Projet IPI - Python - Flask - Sneakers
 
 Board du projet : https://miro.com/app/board/o9J_kibrMIk=/
@@ -14,7 +12,7 @@ Cette Application Web reprend l'idée d'un site de e-commerce dans le monde de l
 Lorsque qu'un utilsiateur se connecte grâce à ses identifiants, il accède a une page "Produit" contenant toutes les sneakers disposible en ce moment.
 Il peut les ajouter au panier et passer une commande.
 
-==============================
+
 
 # Mise en place du projet :
 
