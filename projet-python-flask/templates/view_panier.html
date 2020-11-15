@@ -42,7 +42,10 @@
                             </div>
                         </div>
                         <div class="col-2">
-                            <a href="#"><button type="button" class="btn btn-outline-danger">Retirer du panier</button></a>
+                            <form action="/delPanier" method="post">
+                                <input type="text" id="produitCode" style="display:none;" name="produitCode" value="{{produit.code}}">
+                                <button type="submit" value="{{produit}}" class="btn btn-outline-danger">Retirer du panier</button>
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -116,6 +116,23 @@ def create_app():
             listPanier.append(leProduit)
             print(listPanier)
             return render_template("view_panier.html", listPanier=listPanier)
+
+        return render_template("view_panier.html", listPanier=listPanier)
+
+
+    @app.route('/delPanier', methods=['GET', 'POST'])
+    def delPanier():
+        if not g.user:
+            return redirect(url_for('connexion'))
+
+        if request.method == 'POST':
+            result = request.form
+            unProduit = result['produitCode']
+            leProduit = [x for x in listProduits if x.code == unProduit][0]
+            listPanier.remove(leProduit)
+            print(listPanier)
+            return render_template("view_panier.html", listPanier=listPanier)
+
         return render_template("view_panier.html", listPanier=listPanier)
 
 
