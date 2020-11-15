@@ -33,7 +33,7 @@ Cas git clone https :
 Dans le dossier du projet :
 Ouvrez un terminal
     
-    cd ipi-Pyhton-Projet-Flask
+    cd ipi-Python-Projet-Flask
     python3 -m venv venv
 
 ### Etape 3 - Activer l'environnement virtuel
