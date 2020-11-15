@@ -49,10 +49,16 @@ def create_app():
     listProduits.append(Produit(id=3, code='SNKRS-003', marque='Nike', modele='Vaporwaffle Sacai', coloris='Tour Yellow Stadium Green', prix=490, image='Nike-Sacai-VaporWaffle-Tour-Yellow-Stadium-Green.png'))
     listProduits.append(Produit(id=4, code='SNKRS-004', marque='Nike', modele='Vaporwaffle Sacai', coloris='Villain Red Neptune Green', prix=510, image='Nike-Sacai-Vaporwaffle-Villain-Red-Neptune-Green.png'))
 
-    listProduits.append(Produit(id=4, code='SNKRS-005', marque='Nike', modele='Air Jordan 1 Retro High Travis Scott', coloris='Cactus Jack', prix=1520, image='Air-Jordan-1-Cactus-Jack-Travis-Scott.webp'))
-    listProduits.append(Produit(id=4, code='SNKRS-006', marque='Nike', modele='Air Jordan 1 Retro High Off-White', coloris='NRG White', prix=2370, image='Air-Jordan-1-Retro-High-Off-White-The-Ten-NRJ.webp'))
-    listProduits.append(Produit(id=4, code='SNKRS-007', marque='Nike', modele='Air Jordan 1 Retro High', coloris='UNC Patent', prix=730, image='Air-Jordan-1-Retro-High-UNC-Patent.webp'))
-    listProduits.append(Produit(id=4, code='SNKRS-008', marque='Nike', modele='Air Jordan 1 Retro High', coloris='Fearless OG', prix=460, image='Air-Jordan-1-Retro-High-OG-Fearless.webp'))
+    listProduits.append(Produit(id=5, code='SNKRS-005', marque='Nike', modele='Air Jordan 1 Retro High Travis Scott', coloris='Cactus Jack', prix=1520, image='Air-Jordan-1-Cactus-Jack-Travis-Scott.webp'))
+    listProduits.append(Produit(id=6, code='SNKRS-006', marque='Nike', modele='Air Jordan 1 Retro High Off-White', coloris='NRG White', prix=2370, image='Air-Jordan-1-Retro-High-Off-White-The-Ten-NRJ.webp'))
+    listProduits.append(Produit(id=7, code='SNKRS-007', marque='Nike', modele='Air Jordan 1 Retro High', coloris='UNC Patent', prix=730, image='Air-Jordan-1-Retro-High-UNC-Patent.webp'))
+    listProduits.append(Produit(id=8, code='SNKRS-008', marque='Nike', modele='Air Jordan 1 Retro High', coloris='Fearless OG', prix=460, image='Air-Jordan-1-Retro-High-OG-Fearless.webp'))
+
+    listProduits.append(Produit(id=9, code='SNKRS-009', marque='Adidas', modele='Yeezy Boost 350 V2', coloris='Tail Light', prix=380, image='Adidas-Yeezy-Boost-350-V2-Tail-Light.png'))
+    listProduits.append(Produit(id=10, code='SNKRS-010', marque='Adidas', modele='Yeezy Boost 350 V2', coloris='Natural', prix=310, image='Adidas-Yeezy-350-V2-Natural.png'))
+    listProduits.append(Produit(id=11, code='SNKRS-010', marque='Adidas', modele='Yeezy Boost 350 V2', coloris='Cinder', prix=390, image='Adidas-Yeezy-350-V2-Cinder.png'))
+    listProduits.append(Produit(id=12, code='SNKRS-010', marque='Adidas', modele='Yeezy Boost 350 V2', coloris='Zebra', prix=420, image='Adidas-Yeezy-Boost-350-V2-Zebra.png'))
+
     print(listProduits)
 
     listPanier = []
@@ -149,8 +155,6 @@ def create_app():
         return render_template("view_panier.html", listPanier=listPanier)
 
 
-
-
     @app.route('/panier')
     def panier():
         if not g.user:
@@ -158,9 +162,17 @@ def create_app():
         return render_template("view_panier.html", listPanier=listPanier)
 
 
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return render_template('404.html'), 404
 
     db.init_app(app)
     return app
+
+
+
+
+
 
 # @app.route('/produit')
 #     def produit():
