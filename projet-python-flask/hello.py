@@ -28,7 +28,6 @@ def create_app():
     users = []
     users.append(User(id=1, username='Pierre', password='Pierre'))
     users.append(User(id=2, username='root', password='root'))
-    print(users)
 
     class Produit:
         def __init__(self, id, code, marque, modele, coloris, prix, image):
@@ -59,10 +58,7 @@ def create_app():
     listProduits.append(Produit(id=11, code='SNKRS-010', marque='Adidas', modele='Yeezy Boost 350 V2', coloris='Cinder', prix=390, image='Adidas-Yeezy-350-V2-Cinder.png'))
     listProduits.append(Produit(id=12, code='SNKRS-010', marque='Adidas', modele='Yeezy Boost 350 V2', coloris='Zebra', prix=420, image='Adidas-Yeezy-Boost-350-V2-Zebra.png'))
 
-    print(listProduits)
-
     listPanier = []
-    print(listPanier)
 
     # currentdirectory = os.path.dirname(os.path.abspath(__file__))
     app = Flask(__name__)
