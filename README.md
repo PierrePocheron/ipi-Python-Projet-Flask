@@ -49,7 +49,8 @@ Vous devez avoir (venv) devant votre chemin
     pip install -r requirements.txt
 
 ### Etape 6 - Initialiser les differentes variables du package
-
+    
+    cd projet-python-flask
     set FLASK_APP=hello.py
     set FLASK_ENV=development
     flask run
