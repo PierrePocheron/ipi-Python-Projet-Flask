@@ -58,13 +58,14 @@ Vous devez avoir (venv) devant votre chemin
 ### Etape 7 - Véfification déployement !
 
 La commande "flask run" devrait renvoyer :
- * Serving Flask app "hello.py" (lazy loading)
- * Environment: development
- * Debug mode: on
- * Restarting with stat
- * Debugger is active!
- * Debugger PIN: 100-911-901
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+
+    Serving Flask app "hello.py" (lazy loading)
+    Environment: development
+    Debug mode: on
+    Restarting with stat
+    Debugger is active!
+    Debugger PIN: 100-911-901
+    Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 
 ### Etape 8 - Bonne visite !
 
