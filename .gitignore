@@ -3,7 +3,6 @@ venv/
 
 # Flask
 instance/*
-!instance/.gitignore
 .webassets-cache
 
 # Flask.Python Stack
