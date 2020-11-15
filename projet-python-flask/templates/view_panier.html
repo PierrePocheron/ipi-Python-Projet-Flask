@@ -5,7 +5,7 @@
 {% block navbar %}
 <div class="d-flex justify-content-end mr-5">
     <div><img src="/static/images/user-regular.svg" style="width: 25px; height: 25px;"> Hey, {{g.user.username}}</div>
-    <a href="/panier"><div class="ml-3 text-danger"><img src="/static/images/shopping-cart-solid.svg" style="width: 25px; height: 25px;"> $X </div></a>
+    <a href="/panier"><div class="ml-3 text-danger"><img src="/static/images/shopping-cart-solid.svg" style="width: 25px; height: 25px;"> $X Article(s)</div></a>
 </div>
 {% endblock%}
 
@@ -18,16 +18,13 @@
                 <div class="text-center animate__animated animate__bounce" style="animation-name: flipInX;">
                     <h6 class="text-danger title5 pt-5"><strong>$X Article(s)</strong></h6>
                     <h2 class="titleSection">Votre panier</h2>
-                    {% for produit in listPanier %}
-                        <p><strong>{{produit}} - {{produit.code}} - {{produit.marque}}</strong></p>
-                    {% endfor %}
                 </div>
             </div>
         </div>
         {% for produit in listPanier %}
             <div class="row mt-5" style="justify-content: center;">
                 <div class="col-lg-7">
-                    <div class="row d-flex align-items-center">
+                    <div class="row d-flex align-items-center animate__animated animate__flipInX" style="animation-name: zoomIn;">
                         <div class="col-3">
                             <img src="/static/images/produits/{{produit.image}}">
                         </div>
