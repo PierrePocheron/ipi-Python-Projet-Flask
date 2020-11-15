@@ -21,46 +21,46 @@ Etape 1 ==============================
 
 Récupérer le projet Github avec Git
 
-    - Dans le dossier que vous souhaitez :
-    Ouvrez un terminal 
+- Dans le dossier que vous souhaitez :
+Ouvrez un terminal 
 
-git clone adresse_du_projet_github
+    git clone adresse_du_projet_github
 
 Etape 2 ==============================
 
 Création de l'environnement virtuel
 
-    - Dans le dossier du projet :
-    Ouvrez un terminal
+- Dans le dossier du projet :
+Ouvrez un terminal
     
-python3 -m venv venv
+    python3 -m venv venv
 
 Etape 3 ==============================
 
 Activer l'environnement virtuel
 
-venv\Scripts\activate
+    venv\Scripts\activate
 
 Etape 4 ==============================
     
 Vérifier que l'environnement virtuel est bien activé
 -> vous devez avoir (venv) devant votre chemin
 
-(venv) C:\...\projet-python-flask
+    (venv) C:\...\projet-python-flask
  
 Etape 5 ==============================
 
 Installer les différents modules
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 Etape 6 ==============================
 
 Initialiser les differentes variables du package
 
-set FLASK_APP=hello.py
-set FLASK_ENV=development
-flask run
+    set FLASK_APP=hello.py
+    set FLASK_ENV=development
+    flask run
 
 Etape 7 ==============================
 
