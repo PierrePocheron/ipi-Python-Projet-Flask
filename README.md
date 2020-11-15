@@ -24,14 +24,16 @@ Il peut les ajouter au panier et passer une commande.
 
 Dans le dossier que vous souhaitez :
 Ouvrez un terminal 
+Cas git clone https :
 
-    git clone adresse_du_projet_github
+    git clone https://github.com/PierrePocheron/ipi-Pyhton-Projet-Flask.git
 
 ### Etape 2 - Création de l'environnement virtuel
 
 Dans le dossier du projet :
 Ouvrez un terminal
     
+    cd ipi-Pyhton-Projet-Flask
     python3 -m venv venv
 
 ### Etape 3 - Activer l'environnement virtuel
