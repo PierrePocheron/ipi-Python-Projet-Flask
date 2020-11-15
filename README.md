@@ -9,7 +9,7 @@ Le projet Sneakers à été développé dans le cadre de mon BAC+3 CDEV a l'IPI.
 J'ai utilisé python avec son framework Flask.
 
 Cette Application Web reprend l'idée d'un site de e-commerce dans le monde de la Sneakers, tenue par un personal-shopper.
-Lorsque qu'un utilsiateur se connecte grâce à ses identifiants, il accède a une page "Produit" contenant toutes les sneakers disposible en ce moment.
+Lorsque qu'un utilsiateur se connecte grâce à ses identifiants, il accède à une page "Produit" contenant toutes les sneakers disposible en ce moment.
 Il peut les ajouter au panier et passer une commande.
 
 
@@ -48,7 +48,7 @@ Vous devez avoir (venv) devant votre chemin
 
     pip install -r requirements.txt
 
-### Etape 6 - Initialiser les differentes variables du package
+### Etape 6 - Initialiser les différentes variables du package
     
     cd projet-python-flask
     set FLASK_APP=hello.py
@@ -69,6 +69,6 @@ La commande "flask run" devrait renvoyer :
 
 ### Etape 8 - Bonne visite !
 
-Vous pouvez désormait accèder a l'application web a l'adresse suivante : http://127.0.0.1:5000/
+Vous pouvez désormait accèder à l'application web à l'adresse suivante : http://127.0.0.1:5000/
 
 
