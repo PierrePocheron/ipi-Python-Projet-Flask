@@ -112,7 +112,8 @@ def create_app():
         if request.method == 'POST':
             result = request.form
             unProduit = result['produitCode']
-            listPanier.append(Produit(id='', code=unProduit, marque='', modele='', coloris='', prix='', image=''))
+            leProduit = [x for x in listProduits if x.code == unProduit][0]
+            listPanier.append(leProduit)
             print(listPanier)
             return render_template("view_panier.html", listPanier=listPanier)
         return render_template("view_panier.html", listPanier=listPanier)

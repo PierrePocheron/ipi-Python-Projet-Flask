@@ -29,18 +29,18 @@
                 <div class="col-lg-7">
                     <div class="row d-flex align-items-center">
                         <div class="col-3">
-                            <img src="/static/images/logo_shoe.png">
+                            <img src="/static/images/produits/{{produit.image}}">
                         </div>
                         <div class="col-6">
                             <div class="row">
                                 <div class="col-3">
-                                    <p><strong>{{produit.code}}</strong></p> Nike
+                                    <p><strong>{{produit.code}}</strong></p> {{produit.marque}}
                                 </div>
                                 <div class="col-6">
-                                    Vaporwaffle Sacai Black White
+                                    {{produit.modele}}
                                 </div>
                                 <div class="col-3">
-                                    630€
+                                    {{produit.prix}} €
                                 </div>
                             </div>
                         </div>
