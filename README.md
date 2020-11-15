@@ -56,8 +56,19 @@ Vous devez avoir (venv) devant votre chemin
     set FLASK_APP=hello.py
     set FLASK_ENV=development
     flask run
+    
+### Etape 7 - Véfification déployement !
 
-### Etape 7 - Bonne visite !
+La commande "flask run" devrait renvoyer :
+ * Serving Flask app "hello.py" (lazy loading)
+ * Environment: development
+ * Debug mode: on
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 100-911-901
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+
+### Etape 8 - Bonne visite !
 
 Vous pouvez désormait accèder a l'application web a l'adresse suivante : http://127.0.0.1:5000/
 
