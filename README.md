@@ -5,7 +5,7 @@
 Board du projet : https://miro.com/app/board/o9J_kibrMIk=/
 
 
-##Présentation de mon projet :
+## Présentation de mon projet :
 
 Le projet Sneakers à été développé dans le cadre de mon BAC+3 CDEV a l'IPI.
 J'ai utilisé python avec son framework Flask.
