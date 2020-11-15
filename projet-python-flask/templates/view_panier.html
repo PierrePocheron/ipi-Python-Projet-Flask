@@ -65,7 +65,7 @@
                         {{listPanier|length}} articles
                     </div>
                     <div class="col-6">
-                        Total ttc : $prixTotal
+                        Total ttc : {{ listPanier|sum(attribute='prix') }} €
                     </div>
                     <div class="col-3">
                         <form action="/addCommande" method="post">

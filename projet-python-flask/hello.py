@@ -101,7 +101,7 @@ def create_app():
         if not g.user:
             return redirect(url_for('connexion'))
 
-        return render_template("view_produit.html", listProduits=listProduits)
+        return render_template("view_produit.html", listProduits=listProduits, listPanier=listPanier)
 
 
     @app.route('/addPanier', methods=['GET', 'POST'])
@@ -144,10 +144,9 @@ def create_app():
         if request.method == 'POST':
             listPanier.clear()
             print(listPanier)
-            return render_template("view_panier.html", listPanier=listPanier)
+            return render_template("view_confirmationCommande.html")
 
         return render_template("view_panier.html", listPanier=listPanier)
-
 
 
 
@@ -157,6 +156,8 @@ def create_app():
         if not g.user:
             return redirect(url_for('connexion'))
         return render_template("view_panier.html", listPanier=listPanier)
+
+
 
     db.init_app(app)
     return app
