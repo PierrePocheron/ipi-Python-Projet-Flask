@@ -116,7 +116,6 @@ def create_app():
             unProduit = result['produitCode']
             leProduit = [x for x in listProduits if x.code == unProduit][0]
             listPanier.append(leProduit)
-            print(listPanier)
             return render_template("view_panier.html", listPanier=listPanier)
 
         return render_template("view_panier.html", listPanier=listPanier)
