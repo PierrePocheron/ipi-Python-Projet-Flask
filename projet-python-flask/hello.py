@@ -45,9 +45,10 @@ def create_app():
 
 
 
-    # @app.route('/')
-    # def defaultPage():
-    #     return render_template("view_connexion.html")
+    @app.route('/')
+    def defaultPage():
+        return redirect(url_for('produit'))
+
 
     @app.route('/connexion', methods=['GET', 'POST'])
     def connexion():
@@ -74,12 +75,8 @@ def create_app():
             return redirect(url_for('connexion'))
         return render_template("view_produit.html")
 
-    # @app.route("/produit", methods=["POST"])
-    # def userConnected():
-    #     result = request.form
-    #     u = result['username']
-    #     p = result['password']
-    #     return render_template("view_produit.html", username=u, password=p)
+
+
 
     @app.route('/panier')
     def panier():
