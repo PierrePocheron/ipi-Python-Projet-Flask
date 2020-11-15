@@ -1,5 +1,6 @@
 from flask import (
     Flask,
+    g,
     redirect,
     render_template,
     app,
@@ -34,6 +35,15 @@ def create_app():
     app = Flask(__name__)
     app.secret_key = 'somesecretkey'
 
+    @app.before_request
+    def before_request():
+        g.user = None
+        if 'user_id' in session:
+            user = [x for x in users if x.id == session['user_id']][0]
+            g.user = user
+
+
+
 
     # @app.route('/')
     # def defaultPage():
@@ -45,11 +55,11 @@ def create_app():
             session.pop('user_id', None)
 
             result = request.form
-            u = result['username']
-            p = result['password']
+            username = result['username']
+            password = result['password']
 
-            user = [x for x in users if x.username == u][0]
-            if user and user.password == p:
+            user = [x for x in users if x.username == username][0]
+            if user and user.password == password:
                 session['user_id'] = user.id
                 return redirect(url_for('produit'))
 
@@ -57,8 +67,11 @@ def create_app():
 
         return render_template("view_connexion.html")
 
+
     @app.route('/produit')
     def produit():
+        if not g.user:
+            return redirect(url_for('connexion'))
         return render_template("view_produit.html")
 
     # @app.route("/produit", methods=["POST"])
@@ -70,6 +83,8 @@ def create_app():
 
     @app.route('/panier')
     def panier():
+        if not g.user:
+            return redirect(url_for('connexion'))
         return render_template("view_panier.html")
 
     db.init_app(app)

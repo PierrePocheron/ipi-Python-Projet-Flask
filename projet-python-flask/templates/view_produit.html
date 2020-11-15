@@ -4,7 +4,7 @@
 
 {% block navbar %}
 <div class="d-flex justify-content-end mr-5">
-    <div><img src="/static/images/user-regular.svg" style="width: 25px; height: 25px;"> Hey, {{username}}</div>
+    <div><img src="/static/images/user-regular.svg" style="width: 25px; height: 25px;"> Hey, {{g.user.username}}</div>
     <a href="/panier"><div class="ml-3 text-danger"><img src="/static/images/shopping-cart-solid.svg" style="width: 25px; height: 25px;"> $X Article(s)</div></a>
 </div>
 {% endblock%}
@@ -18,6 +18,8 @@
                 <div class="text-center animate__animated animate__bounce" style="animation-name: flipInX;">
                     <h6 class="text-danger title5 pt-5"><strong>EN FRANCE</strong></h6>
                     <h2 class="titleSection">Sneakers disponibles</h2>
+                    <p>hey name, {{g.user.username}}</p>
+                    <p>hey id, {{g.user.id}}</p>
 
                 </div>
             </div>
