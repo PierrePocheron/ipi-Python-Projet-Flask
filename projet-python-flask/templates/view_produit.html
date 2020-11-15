@@ -5,7 +5,7 @@
 {% block navbar %}
 <div class="d-flex justify-content-end mr-5">
     <div><img src="/static/images/user-regular.svg" style="width: 25px; height: 25px;"> Hey, {{g.user.username}}</div>
-    <a href="/panier"><div class="ml-3 text-danger"><img src="/static/images/shopping-cart-solid.svg" style="width: 25px; height: 25px;"> $X Article(s)</div></a>
+    <a href="/panier"><div class="ml-3 text-danger"><img src="/static/images/shopping-cart-solid.svg" style="width: 25px; height: 25px;"> {{listPanier|length}} Article(s)</div></a>
 </div>
 {% endblock%}
 

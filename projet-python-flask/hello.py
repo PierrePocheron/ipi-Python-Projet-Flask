@@ -136,6 +136,19 @@ def create_app():
         return render_template("view_panier.html", listPanier=listPanier)
 
 
+    @app.route('/addCommande', methods=['GET', 'POST'])
+    def addCommande():
+        if not g.user:
+            return redirect(url_for('connexion'))
+
+        if request.method == 'POST':
+            listPanier.clear()
+            print(listPanier)
+            return render_template("view_panier.html", listPanier=listPanier)
+
+        return render_template("view_panier.html", listPanier=listPanier)
+
+
 
 
 

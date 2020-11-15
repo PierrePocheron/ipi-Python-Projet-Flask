@@ -5,7 +5,8 @@
 {% block navbar %}
 <div class="d-flex justify-content-end mr-5">
     <div><img src="/static/images/user-regular.svg" style="width: 25px; height: 25px;"> Hey, {{g.user.username}}</div>
-    <a href="/panier"><div class="ml-3 text-danger"><img src="/static/images/shopping-cart-solid.svg" style="width: 25px; height: 25px;"> $X Article(s)</div></a>
+    <a href="/panier"><div class="ml-3 text-danger"><img src="/static/images/shopping-cart-solid.svg" style="width: 25px; height: 25px;"> {{listPanier|length}} Article(s)</div></a>
+
 </div>
 {% endblock%}
 
@@ -16,8 +17,9 @@
         <div class="row rowNoGutters" style="justify-content: center;">
             <div class="col-lg-12">
                 <div class="text-center animate__animated animate__bounce" style="animation-name: flipInX;">
-                    <h6 class="text-danger title5 pt-5"><strong>$X Article(s)</strong></h6>
+                    <h6 class="text-danger title5 pt-5"><strong>{{listPanier|length}} Article(s)</strong></h6>
                     <h2 class="titleSection">Votre panier</h2>
+                    <p></p>
                 </div>
             </div>
         </div>
@@ -60,13 +62,15 @@
             <div class="col-lg-4 ">
                 <div class="row d-flex align-items-center" style="font-weight: bold">
                     <div class="col-3">
-                        $x articles
+                        {{listPanier|length}} articles
                     </div>
                     <div class="col-6">
                         Total ttc : $prixTotal
                     </div>
                     <div class="col-3">
-                        <a href="#"><button type="button" class="btn btn-success">Valider commande</button></a>
+                        <form action="/addCommande" method="post">
+                            <button type="submit" value="{{produit}}" class="btn btn-success">Valider commande</button>
+                        </form>
                     </div>
                 </div>
             </div>
