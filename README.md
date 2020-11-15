@@ -1,3 +1,5 @@
+==============================
+
 Projet IPI - Python - Flask - Sneakers
 
 Board du projet : https://miro.com/app/board/o9J_kibrMIk=/
@@ -21,7 +23,7 @@ Etape 1 ==============================
 
 Récupérer le projet Github avec Git
 
-- Dans le dossier que vous souhaitez :
+Dans le dossier que vous souhaitez :
 Ouvrez un terminal 
 
     git clone adresse_du_projet_github
@@ -30,7 +32,7 @@ Etape 2 ==============================
 
 Création de l'environnement virtuel
 
-- Dans le dossier du projet :
+Dans le dossier du projet :
 Ouvrez un terminal
     
     python3 -m venv venv
