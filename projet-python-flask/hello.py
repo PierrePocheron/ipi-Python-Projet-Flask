@@ -48,8 +48,15 @@ def create_app():
     listProduits.append(Produit(id=2, code='SNKRS-002', marque='Nike', modele='Vaporwaffle Sacai', coloris='Sport Fuchsia Game Royal', prix=590, image='Nike-Sacai-VaporWaffle-Game-Royal-Fuchsia.png'))
     listProduits.append(Produit(id=3, code='SNKRS-003', marque='Nike', modele='Vaporwaffle Sacai', coloris='Tour Yellow Stadium Green', prix=490, image='Nike-Sacai-VaporWaffle-Tour-Yellow-Stadium-Green.png'))
     listProduits.append(Produit(id=4, code='SNKRS-004', marque='Nike', modele='Vaporwaffle Sacai', coloris='Villain Red Neptune Green', prix=510, image='Nike-Sacai-Vaporwaffle-Villain-Red-Neptune-Green.png'))
+
+    listProduits.append(Produit(id=4, code='SNKRS-005', marque='Nike', modele='Air Jordan 1 Retro High Travis Scott', coloris='Cactus Jack', prix=1520, image='Air-Jordan-1-Cactus-Jack-Travis-Scott.webp'))
+    listProduits.append(Produit(id=4, code='SNKRS-006', marque='Nike', modele='Air Jordan 1 Retro High Off-White', coloris='NRG White', prix=2370, image='Air-Jordan-1-Retro-High-Off-White-The-Ten-NRJ.webp'))
+    listProduits.append(Produit(id=4, code='SNKRS-007', marque='Nike', modele='Air Jordan 1 Retro High', coloris='UNC Patent', prix=730, image='Air-Jordan-1-Retro-High-UNC-Patent.webp'))
+    listProduits.append(Produit(id=4, code='SNKRS-008', marque='Nike', modele='Air Jordan 1 Retro High', coloris='Fearless OG', prix=460, image='Air-Jordan-1-Retro-High-OG-Fearless.webp'))
     print(listProduits)
 
+    listPanier = []
+    print(listPanier)
 
     # currentdirectory = os.path.dirname(os.path.abspath(__file__))
     app = Flask(__name__)
@@ -94,9 +101,22 @@ def create_app():
         if not g.user:
             return redirect(url_for('connexion'))
 
-        # produit = [x for x in produits][0]
-        # session['produit_id'] = produit.id
         return render_template("view_produit.html", listProduits=listProduits)
+
+
+    @app.route('/addPanier', methods=['GET', 'POST'])
+    def addPanier():
+        if not g.user:
+            return redirect(url_for('connexion'))
+
+        if request.method == 'POST':
+            result = request.form
+            unProduit = result['produitCode']
+            listPanier.append(Produit(id='', code=unProduit, marque='', modele='', coloris='', prix='', image=''))
+            print(listPanier)
+            return render_template("view_panier.html", listPanier=listPanier)
+        return render_template("view_panier.html", listPanier=listPanier)
+
 
 
 
@@ -105,7 +125,7 @@ def create_app():
     def panier():
         if not g.user:
             return redirect(url_for('connexion'))
-        return render_template("view_panier.html")
+        return render_template("view_panier.html", listPanier=listPanier)
 
     db.init_app(app)
     return app

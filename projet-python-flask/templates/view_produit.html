@@ -31,7 +31,11 @@
                         <p><strong>{{produit.modele}} - {{produit.coloris}} </strong></p>
                         <p>{{produit.marque}}</p>
                         <p style="color: #878786;">{{produit.prix}} €</p>
-                        <a href="#"><button type="button" class="btn btn-primary">Ajouter au panier</button></a>
+                        <form action="/addPanier" method="post">
+                            <input type="text" id="produitCode" name="produitCode">
+                            <p>{{produit.code}}</p>
+                            <button type="submit" value="{{produit}}" class="btn btn-primary">Ajouter au panier</button>
+                        </form>
                     </div>
                 </div>
             {% endfor %}

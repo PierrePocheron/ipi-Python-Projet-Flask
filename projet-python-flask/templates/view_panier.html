@@ -18,62 +18,42 @@
                 <div class="text-center animate__animated animate__bounce" style="animation-name: flipInX;">
                     <h6 class="text-danger title5 pt-5"><strong>$X Article(s)</strong></h6>
                     <h2 class="titleSection">Votre panier</h2>
+                    {% for produit in listPanier %}
+                        <p><strong>{{produit}} - {{produit.code}} - {{produit.marque}}</strong></p>
+                    {% endfor %}
                 </div>
             </div>
         </div>
-        <div class="row mt-5" style="justify-content: center;">
-            <div class="col-lg-7">
-                <div class="row d-flex align-items-center">
-                    <div class="col-3">
-                        <img src="/static/images/logo_shoe.png">
-                    </div>
-                    <div class="col-6">
-                        <div class="row">
-                            <div class="col-3">
-                                Nike
-                            </div>
-                            <div class="col-6">
-                                Vaporwaffle Sacai Black White
-                            </div>
-                            <div class="col-3">
-                                630€
+        {% for produit in listPanier %}
+            <div class="row mt-5" style="justify-content: center;">
+                <div class="col-lg-7">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-3">
+                            <img src="/static/images/logo_shoe.png">
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-3">
+                                    <p><strong>{{produit.code}}</strong></p> Nike
+                                </div>
+                                <div class="col-6">
+                                    Vaporwaffle Sacai Black White
+                                </div>
+                                <div class="col-3">
+                                    630€
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-2">
-                        <a href="#"><button type="button" class="btn btn-outline-danger">Retirer du panier</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <hr class="col-12">
-
-        <div class="row mt-5" style="justify-content: center;">
-            <div class="col-lg-7">
-                <div class="row d-flex align-items-center">
-                    <div class="col-3">
-                        <img src="/static/images/logo_shoe.png">
-                    </div>
-                    <div class="col-6">
-                        <div class="row">
-                            <div class="col-3">
-                                Nike
-                            </div>
-                            <div class="col-6">
-                                Vaporwaffle Sacai Black White
-                            </div>
-                            <div class="col-3">
-                                630€
-                            </div>
+                        <div class="col-2">
+                            <a href="#"><button type="button" class="btn btn-outline-danger">Retirer du panier</button></a>
                         </div>
                     </div>
-                    <div class="col-2">
-                        <a href="#"><button type="button" class="btn btn-outline-danger">Retirer du panier</button></a>
-                    </div>
                 </div>
             </div>
-        </div>
+
+            <hr class="col-12">
+        {% endfor %}
+
 
         <div class="row mt-5"></div>
         <div class="row mt-5" style="justify-content: center;">
