@@ -26,7 +26,7 @@ Dans le dossier que vous souhaitez :
 Ouvrez un terminal 
 Cas git clone https :
 
-    git clone https://github.com/PierrePocheron/ipi-Pyhton-Projet-Flask.git
+    git clone https://github.com/PierrePocheron/ipi-Python-Projet-Flask.git
 
 ### Etape 2 - Création de l'environnement virtuel
 
