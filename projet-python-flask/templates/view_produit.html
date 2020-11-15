@@ -10,6 +10,7 @@
 {% endblock%}
 
 
+
 {% block content %}
 <div id="test" class="container-fluid big-container" style="background-color:#f0f0f0;">
     <div class="container-am" style="padding-top: 30px; padding-bottom: 56px;">
@@ -18,49 +19,22 @@
                 <div class="text-center animate__animated animate__bounce" style="animation-name: flipInX;">
                     <h6 class="text-danger title5 pt-5"><strong>EN FRANCE</strong></h6>
                     <h2 class="titleSection">Sneakers disponibles</h2>
+
                 </div>
             </div>
         </div>
         <div class="row rowNoGutters mt-5" style="text-align: -webkit-center;">
-            <div class="col-lg-3 col-md-4 col-sm-6 mt-3 mb-3 mb-xl-5 itemSquare animate__animated animate__flipInX" style="animation-name: zoomIn;">
-                <img src="/static/images/logo_shoe.png">
-                <div class="divbutton text-center m-4 p-5">
-                    <p><strong>Vaporwaffle Sacai Black White </strong></p>
-                    <p>Nike</p>
-                    <p style="color: #878786;">à partir de 500€</p>
-                    <a href="#"><button type="button" class="btn btn-primary">Ajouter au panier</button></a>
+            {% for produit in listProduits %}
+                <div class="col-lg-3 col-md-4 col-sm-6 mt-3 mb-3 mb-xl-5 itemSquare animate__animated animate__flipInX" style="animation-name: zoomIn;">
+                    <img src="/static/images/produits/{{produit.image}}">
+                    <div class="divbutton text-center m-4 p-5">
+                        <p><strong>{{produit.modele}} - {{produit.coloris}} </strong></p>
+                        <p>{{produit.marque}}</p>
+                        <p style="color: #878786;">{{produit.prix}} €</p>
+                        <a href="#"><button type="button" class="btn btn-primary">Ajouter au panier</button></a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-6 mt-3 mb-3 mb-xl-5 itemSquare animate__animated animate__flipInX" style="animation-name: zoomIn;">
-                <img src="/static/images/logo_shoe.png">
-                <div class="divbutton text-center m-4 p-5">
-                    <p><strong>Vaporwaffle Sacai Black White </strong></p>
-                    <p>Nike</p>
-                    <p style="color: #878786;">à partir de 500€</p>
-                    <a href="#"><button type="button" class="btn btn-primary">Ajouter au panier</button></a>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-6 mt-3 mb-3 mb-xl-5 itemSquare animate__animated animate__flipInX" style="animation-name: zoomIn;">
-                <img src="/static/images/logo_shoe.png">
-                <div class="divbutton text-center m-4 p-5">
-                    <p><strong>Vaporwaffle Sacai Black White </strong></p>
-                    <p>Nike</p>
-                    <p style="color: #878786;">à partir de 500€</p>
-                    <a href="#"><button type="button" class="btn btn-primary">Ajouter au panier</button></a>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-6 mt-3 mb-3 mb-xl-5 itemSquare animate__animated animate__flipInX" style="animation-name: zoomIn;">
-                <img src="/static/images/logo_shoe.png">
-                <div class="divbutton text-center m-4 p-5">
-                    <p><strong>Vaporwaffle Sacai Black White </strong></p>
-                    <p>Nike</p>
-                    <p style="color: #878786;">à partir de 500€</p>
-                    <a href="#"><button type="button" class="btn btn-primary">Ajouter au panier</button></a>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>

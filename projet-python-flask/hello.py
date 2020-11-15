@@ -43,13 +43,12 @@ def create_app():
         def __repr__(self):
             return f'<Produit: {self.code}>'
 
-    produits = []
-    produits.append(Produit(id=1, code='SNKRS-001', marque='Nike', modele='Vaporwaffle Sacai', coloris='Black White', prix=570, image='unChemin'))
-    produits.append(Produit(id=2, code='SNKRS-002', marque='Nike', modele='Vaporwaffle Sacai', coloris='Sport Fuchsia Game Royal', prix=590, image='unChemin'))
-    produits.append(Produit(id=3, code='SNKRS-003', marque='Nike', modele='Vaporwaffle Sacai', coloris='Tour Yellow Stadium Green', prix=490, image='unChemin'))
-    produits.append(Produit(id=4, code='SNKRS-004', marque='Nike', modele='Vaporwaffle Sacai', coloris='Villain Red Neptune Green', prix=510, image='unChemin'))
-    print(produits)
-
+    listProduits = []
+    listProduits.append(Produit(id=1, code='SNKRS-001', marque='Nike', modele='Vaporwaffle Sacai', coloris='Black White', prix=570, image='Nike-Sacai-Vaporwaffle-black-white.png'))
+    listProduits.append(Produit(id=2, code='SNKRS-002', marque='Nike', modele='Vaporwaffle Sacai', coloris='Sport Fuchsia Game Royal', prix=590, image='Nike-Sacai-VaporWaffle-Game-Royal-Fuchsia.png'))
+    listProduits.append(Produit(id=3, code='SNKRS-003', marque='Nike', modele='Vaporwaffle Sacai', coloris='Tour Yellow Stadium Green', prix=490, image='Nike-Sacai-VaporWaffle-Tour-Yellow-Stadium-Green.png'))
+    listProduits.append(Produit(id=4, code='SNKRS-004', marque='Nike', modele='Vaporwaffle Sacai', coloris='Villain Red Neptune Green', prix=510, image='Nike-Sacai-Vaporwaffle-Villain-Red-Neptune-Green.png'))
+    print(listProduits)
 
 
     # currentdirectory = os.path.dirname(os.path.abspath(__file__))
@@ -94,7 +93,10 @@ def create_app():
     def produit():
         if not g.user:
             return redirect(url_for('connexion'))
-        return render_template("view_produit.html")
+
+        # produit = [x for x in produits][0]
+        # session['produit_id'] = produit.id
+        return render_template("view_produit.html", listProduits=listProduits)
 
 
 
