@@ -70,6 +70,7 @@ La commande "flask run" devrait renvoyer :
 ### Etape 8 - Bonne visite !
 
 Vous pouvez désormait accèder à l'application web à l'adresse suivante : http://127.0.0.1:5000/
+
 Identificants de connexion : 
     
     login : Ayoub
