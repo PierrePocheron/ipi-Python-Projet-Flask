@@ -28,10 +28,31 @@ def create_app():
     users = []
     users.append(User(id=1, username='Pierre', password='Pierre'))
     users.append(User(id=2, username='root', password='root'))
-
     print(users)
 
-    currentdirectory = os.path.dirname(os.path.abspath(__file__))
+    class Produit:
+        def __init__(self, id, code, marque, modele, coloris, prix, image):
+            self.id = id
+            self.code = code
+            self.marque = marque
+            self.modele = modele
+            self.coloris = coloris
+            self.prix = prix
+            self.image = image
+
+        def __repr__(self):
+            return f'<Produit: {self.code}>'
+
+    produits = []
+    produits.append(Produit(id=1, code='SNKRS-001', marque='Nike', modele='Vaporwaffle Sacai', coloris='Black White', prix=570, image='unChemin'))
+    produits.append(Produit(id=2, code='SNKRS-002', marque='Nike', modele='Vaporwaffle Sacai', coloris='Sport Fuchsia Game Royal', prix=590, image='unChemin'))
+    produits.append(Produit(id=3, code='SNKRS-003', marque='Nike', modele='Vaporwaffle Sacai', coloris='Tour Yellow Stadium Green', prix=490, image='unChemin'))
+    produits.append(Produit(id=4, code='SNKRS-004', marque='Nike', modele='Vaporwaffle Sacai', coloris='Villain Red Neptune Green', prix=510, image='unChemin'))
+    print(produits)
+
+
+
+    # currentdirectory = os.path.dirname(os.path.abspath(__file__))
     app = Flask(__name__)
     app.secret_key = 'somesecretkey'
 
