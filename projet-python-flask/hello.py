@@ -103,7 +103,6 @@ def create_app():
     def defaultPage():
         return redirect(url_for('produit'))
 
-
     # Route to connect User
     @app.route('/connexion', methods=['GET', 'POST'])
     def connexion():
