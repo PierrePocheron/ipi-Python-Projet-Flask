@@ -127,6 +127,15 @@ def create_app():
 
         return render_template("view_connexion.html")
 
+    # Route to Deconnexion
+    @app.route('/deconnexion')
+    def deconnexion():
+        # Empty all session variables
+        session.clear()
+        # empty the basket
+        listPanier.clear()
+        return redirect(url_for('connexion'))
+
     # Route to Product
     @app.route('/produit')
     def produit():

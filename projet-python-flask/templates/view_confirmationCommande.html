@@ -1,11 +1,16 @@
 {% extends "base.html" %}
-{% block title %}Page Produit{% endblock%}
+{% block title %}Commande confirmée{% endblock%}
 
 
 {% block navbar %}
-<div class="d-flex justify-content-end mr-5">
-    <div><img src="/static/images/user-regular.svg" style="width: 25px; height: 25px;"> Hey, {{g.user.username}}</div>
-    <a href="/panier"><div class="ml-3 text-danger"><img src="/static/images/shopping-cart-solid.svg" style="width: 25px; height: 25px;"> {{listPanier|length}} Article(s)</div></a>
+<div class="d-flex align-items-center justify-content-end mr-5">
+    <img src="/static/images/user-regular.svg" style="width: 25px; height: 25px;"> Hey, {{g.user.username}}
+    <div class="ml-3 mr-5">
+        <a href="/panier"><div class="ml-3 text-danger"><img src="/static/images/shopping-cart-solid.svg" style="width: 25px; height: 25px;"> {{listPanier|length}} Article(s)</div></a>
+    </div>
+    <div class="ml-5">
+        <a href="/deconnexion"><button type="button" class="btn btn-danger">déconnexion</button></a>
+    </div>
 </div>
 {% endblock%}
 
