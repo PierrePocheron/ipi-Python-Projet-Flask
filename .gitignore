@@ -1,8 +1,14 @@
 #Virtual Environement
+.env
+.venv
+env/
 venv/
+ENV/
+env.bak/
+venv.bak/
 
 # Flask
-instance/*
+instance/
 .webassets-cache
 
 # Flask.Python Stack
@@ -11,3 +17,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
