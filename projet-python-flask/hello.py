@@ -11,9 +11,6 @@ from flask import (
 import sqlite3
 import os
 
-# from db import get_db
-from . import db
-
 
 def create_app():
     # Class User + implementation
@@ -208,5 +205,4 @@ def create_app():
     def page_not_found(e):
         return render_template('404.html'), 404
 
-    db.init_app(app)
     return app
