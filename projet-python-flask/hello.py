@@ -1,20 +1,12 @@
 from flask import (
-    Flask,
-    g,
-    redirect,
-    render_template,
-    app,
-    request,
-    session,
-    url_for
-)
-import sqlite3
-import os
+    Flask, g, redirect, render_template, request, session, url_for)
 
 
 def create_app():
-    # Class User + implementation
+    """Create web application."""
+
     class User:
+        """Website user."""
         def __init__(self, id, username, password):
             self.id = id
             self.username = username
@@ -28,8 +20,8 @@ def create_app():
     users.append(User(id=2, username='Ayoub', password='Guillaume'))
     users.append(User(id=3, username='root', password='root'))
 
-    # Class Produit + implementation
     class Produit:
+        """Product sold on the websited."""
         def __init__(self, id, code, marque, modele, coloris, prix, image):
             self.id = id
             self.code = code
@@ -88,34 +80,38 @@ def create_app():
 
     @app.before_request
     def before_request():
-        # Instanciation of the global variable user
+        """Set the current user as a global variable."""
         g.user = None
         if 'user_id' in session:
             # Retrieving the connected user_id
             user = [x for x in users if x.id == session['user_id']][0]
             g.user = user
 
-    # default route
     @app.route('/')
     def defaultPage():
+        """Home page."""
         return redirect(url_for('produit'))
 
-    # Route to connect User
     @app.route('/connexion', methods=['GET', 'POST'])
     def connexion():
-        # Verification of the past method
+        """Connect user."""
         if request.method == 'POST':
             session.pop('user_id', None)
 
             # Retrieving the username and password fields of the form
-            result = request.form
-            username = result['username']
-            password = result['password']
+            username = request.form['username']
+            password = request.form['password']
 
-            # Retrieving a User object corresponding to the Username retrieved
-            user = [x for x in users if x.username == username][0]
-            # Verification Password matches Username
-            if user and user.password == password:
+            # Retrieving a user object corresponding to the username retrieved
+            filtered_users = [
+                user for user in users if user.username == username]
+            if not filtered_users:
+                # No user with this username, abort
+                return redirect(url_for('connexion'))
+
+            # Check that password matches username
+            user = filtered_users[0]
+            if user.password == password:
                 # Implementation of the session variable: user_id
                 session['user_id'] = user.id
                 return redirect(url_for('produit'))
@@ -124,28 +120,30 @@ def create_app():
 
         return render_template("view_connexion.html")
 
-    # Route to Deconnexion
     @app.route('/deconnexion')
     def deconnexion():
+        """Disconnect current user."""
         # Empty all session variables
         session.clear()
-        # empty the basket
+        # Empty the cart
         listPanier.clear()
         return redirect(url_for('connexion'))
 
-    # Route to Product
     @app.route('/produit')
     def produit():
-        # Verification that the user is logged in
+        """List products."""
+        # Check that the user is logged in
         if not g.user:
             return redirect(url_for('connexion'))
 
-        return render_template("view_produit.html", listProduits=listProduits, listPanier=listPanier)
+        return render_template(
+            "view_produit.html", listProduits=listProduits,
+            listPanier=listPanier)
 
-    # Route to add Product from Card
     @app.route('/addPanier', methods=['GET', 'POST'])
     def addPanier():
-        # Verification that the user is logged in
+        """Add a product to cart."""
+        # Check that the user is logged in
         if not g.user:
             return redirect(url_for('connexion'))
 
@@ -160,10 +158,10 @@ def create_app():
 
         return render_template("view_panier.html", listPanier=listPanier)
 
-    # Route to delete Product from Card
     @app.route('/delPanier', methods=['GET', 'POST'])
     def delPanier():
-        # Verification that the user is logged in
+        """Delete a product from cart."""
+        # Check that the user is logged in
         if not g.user:
             return redirect(url_for('connexion'))
 
@@ -178,10 +176,10 @@ def create_app():
 
         return render_template("view_panier.html", listPanier=listPanier)
 
-    # Route to validate an order
     @app.route('/addCommande', methods=['GET', 'POST'])
     def addCommande():
-        # Verification that the user is logged in
+        """Validate an order."""
+        # Check that the user is logged in
         if not g.user:
             return redirect(url_for('connexion'))
 
@@ -192,15 +190,14 @@ def create_app():
 
         return render_template("view_panier.html", listPanier=listPanier)
 
-    # Route for the card
     @app.route('/panier')
     def panier():
-        # Verification that the user is logged in
+        """View cart."""
+        # Check that the user is logged in
         if not g.user:
             return redirect(url_for('connexion'))
         return render_template("view_panier.html", listPanier=listPanier)
 
-    #Route for the unknown URL
     @app.errorhandler(404)
     def page_not_found(e):
         return render_template('404.html'), 404
